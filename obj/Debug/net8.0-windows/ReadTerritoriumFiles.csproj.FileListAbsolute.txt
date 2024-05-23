@@ -19,3 +19,4 @@ D:\projects\source code\Utilities\ReadTerritoriumFiles\obj\Debug\net8.0-windows\
 D:\projects\source code\Utilities\ReadTerritoriumFiles\obj\Debug\net8.0-windows\ref\ReadTerritoriumFiles.dll
 D:\projects\source code\Utilities\ReadTerritoriumFiles\bin\Debug\net8.0-windows\Dumpify.dll
 D:\projects\source code\Utilities\ReadTerritoriumFiles\bin\Debug\net8.0-windows\Spectre.Console.dll
+D:\projects\source code\Utilities\ReadTerritoriumFiles\obj\Debug\net8.0-windows\ReadTerritoriumFiles.sourcelink.json
