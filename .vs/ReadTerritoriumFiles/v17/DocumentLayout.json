@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{53DA8A91-F1E1-417B-A001-A6DFDB52148D}|ReadTerritoriumFiles.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F5C498A9-5C1C-4F4C-ADF4-FB90C7A8C6B0}|..\\Cetap_Classes\\Cetap_Classes.csproj|d:\\projects\\source code\\utilities\\cetap_classes\\read_online_aql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5C498A9-5C1C-4F4C-ADF4-FB90C7A8C6B0}|..\\Cetap_Classes\\Cetap_Classes.csproj|d:\\projects\\source code\\utilities\\cetap_classes\\onlineaql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5C498A9-5C1C-4F4C-ADF4-FB90C7A8C6B0}|..\\Cetap_Classes\\Cetap_Classes.csproj|d:\\projects\\source code\\utilities\\cetap_classes\\read_online_mat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5C498A9-5C1C-4F4C-ADF4-FB90C7A8C6B0}|..\\Cetap_Classes\\Cetap_Classes.csproj|d:\\projects\\source code\\utilities\\cetap_classes\\read_online_bio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F5C498A9-5C1C-4F4C-ADF4-FB90C7A8C6B0}|..\\Cetap_Classes\\Cetap_Classes.csproj|d:\\projects\\source code\\utilities\\cetap_classes\\onlinebio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -16,10 +28,7 @@
       "AbsoluteMoniker": "D:0:0:{F5C498A9-5C1C-4F4C-ADF4-FB90C7A8C6B0}|..\\Cetap_Classes\\Cetap_Classes.csproj|d:\\projects\\source code\\utilities\\cetap_classes\\onlinemat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5C498A9-5C1C-4F4C-ADF4-FB90C7A8C6B0}|..\\Cetap_Classes\\Cetap_Classes.csproj|d:\\projects\\source code\\utilities\\cetap_classes\\onlineaql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53DA8A91-F1E1-417B-A001-A6DFDB52148D}|ReadTerritoriumFiles.csproj|D:\\projects\\source code\\Utilities\\ReadTerritoriumFiles\\readterritoriumfiles.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{53DA8A91-F1E1-417B-A001-A6DFDB52148D}|ReadTerritoriumFiles.csproj|d:\\projects\\source code\\utilities\\readterritoriumfiles\\readterritoriumfiles.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{53DA8A91-F1E1-417B-A001-A6DFDB52148D}|ReadTerritoriumFiles.csproj|solutionrelative:readterritoriumfiles.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -30,60 +39,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 175,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "onlineBIO.cs",
-              "DocumentMoniker": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineBIO.cs",
-              "RelativeDocumentMoniker": "..\\Cetap_Classes\\onlineBIO.cs",
-              "ToolTip": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineBIO.cs",
-              "RelativeToolTip": "..\\Cetap_Classes\\onlineBIO.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAA1wA8AAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T05:25:12.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "onlineMAT.cs",
-              "DocumentMoniker": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineMAT.cs",
-              "RelativeDocumentMoniker": "..\\Cetap_Classes\\onlineMAT.cs",
-              "ToolTip": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineMAT.cs",
-              "RelativeToolTip": "..\\Cetap_Classes\\onlineMAT.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAA1wBwAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T07:27:20.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Loadrecs.cs",
-              "DocumentMoniker": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\Loadrecs.cs",
-              "RelativeDocumentMoniker": "..\\Cetap_Classes\\Loadrecs.cs",
-              "ToolTip": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\Loadrecs.cs",
-              "RelativeToolTip": "..\\Cetap_Classes\\Loadrecs.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAowCwAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T09:26:11.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "onlineAQL.cs",
-              "DocumentMoniker": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineAQL.cs",
-              "RelativeDocumentMoniker": "..\\Cetap_Classes\\onlineAQL.cs",
-              "ToolTip": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineAQL.cs",
-              "RelativeToolTip": "..\\Cetap_Classes\\onlineAQL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD4AAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T09:26:03.926Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -92,15 +49,262 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\projects\\source code\\Utilities\\ReadTerritoriumFiles\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAEsDAAAAAAAAAAAWwF4DAAAtAAAA",
+              "ViewState": "AQIAAN4BAAAAAAAAAAAAAO4BAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-14T14:50:14.402Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Read_online_MAT.cs",
+              "DocumentMoniker": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\Read_online_MAT.cs",
+              "RelativeDocumentMoniker": "..\\Cetap_Classes\\Read_online_MAT.cs",
+              "ToolTip": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\Read_online_MAT.cs",
+              "RelativeToolTip": "..\\Cetap_Classes\\Read_online_MAT.cs",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAAAIUAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T08:40:31.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Read_online_BIO.cs",
+              "DocumentMoniker": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\Read_online_BIO.cs",
+              "RelativeDocumentMoniker": "..\\Cetap_Classes\\Read_online_BIO.cs",
+              "ToolTip": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\Read_online_BIO.cs",
+              "RelativeToolTip": "..\\Cetap_Classes\\Read_online_BIO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T08:40:17.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Read_online_AQL.cs",
+              "DocumentMoniker": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\Read_online_AQL.cs",
+              "RelativeDocumentMoniker": "..\\Cetap_Classes\\Read_online_AQL.cs",
+              "ToolTip": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\Read_online_AQL.cs",
+              "RelativeToolTip": "..\\Cetap_Classes\\Read_online_AQL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T08:39:54.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:149:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:144:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:145:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:146:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:147:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:148:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:143:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:142:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:141:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c388b845-4151-3732-91f2-74ee20babafc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1840856777:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1951589028:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:617199321:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f528058d-fa8f-3483-a6b9-07e1f506eff3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{4bc05575-bd5c-3f5c-a645-ed962d0b8662}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d40b92cc-e61e-39d8-b0a3-db3f6ee92b33}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{673a989b-a429-376c-a584-d56b20ce6e41}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{ae3699ed-404e-3bfd-a56a-e9d5efcc7ba1}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ReadTerritoriumFiles",
+              "Title": "onlineBIO.cs",
+              "DocumentMoniker": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineBIO.cs",
+              "RelativeDocumentMoniker": "..\\Cetap_Classes\\onlineBIO.cs",
+              "ToolTip": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineBIO.cs",
+              "RelativeToolTip": "..\\Cetap_Classes\\onlineBIO.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAACEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T05:25:12.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "onlineMAT.cs",
+              "DocumentMoniker": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineMAT.cs",
+              "RelativeDocumentMoniker": "..\\Cetap_Classes\\onlineMAT.cs",
+              "ToolTip": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineMAT.cs",
+              "RelativeToolTip": "..\\Cetap_Classes\\onlineMAT.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T07:27:20.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Loadrecs.cs",
+              "DocumentMoniker": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\Loadrecs.cs",
+              "RelativeDocumentMoniker": "..\\Cetap_Classes\\Loadrecs.cs",
+              "ToolTip": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\Loadrecs.cs",
+              "RelativeToolTip": "..\\Cetap_Classes\\Loadrecs.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T09:26:11.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "onlineAQL.cs",
+              "DocumentMoniker": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineAQL.cs",
+              "RelativeDocumentMoniker": "..\\Cetap_Classes\\onlineAQL.cs",
+              "ToolTip": "D:\\projects\\source code\\Utilities\\Cetap_Classes\\onlineAQL.cs",
+              "RelativeToolTip": "..\\Cetap_Classes\\onlineAQL.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAGMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T07:24:13.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReadTerritoriumFiles.csproj",
               "DocumentMoniker": "D:\\projects\\source code\\Utilities\\ReadTerritoriumFiles\\ReadTerritoriumFiles.csproj",
               "RelativeDocumentMoniker": "ReadTerritoriumFiles.csproj",
               "ToolTip": "D:\\projects\\source code\\Utilities\\ReadTerritoriumFiles\\ReadTerritoriumFiles.csproj",
@@ -108,6 +312,32 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-05-16T10:54:38.265Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 81,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{4a9b7e51-aa16-11d0-a8c5-00a0c921a4d2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{605322a2-17ae-43f4-b60f-766556e46c87}"
             }
           ]
         }

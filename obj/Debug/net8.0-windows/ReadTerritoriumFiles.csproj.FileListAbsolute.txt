@@ -20,3 +20,9 @@ D:\projects\source code\Utilities\ReadTerritoriumFiles\obj\Debug\net8.0-windows\
 D:\projects\source code\Utilities\ReadTerritoriumFiles\bin\Debug\net8.0-windows\Dumpify.dll
 D:\projects\source code\Utilities\ReadTerritoriumFiles\bin\Debug\net8.0-windows\Spectre.Console.dll
 D:\projects\source code\Utilities\ReadTerritoriumFiles\obj\Debug\net8.0-windows\ReadTerritoriumFiles.sourcelink.json
+D:\projects\source code\Utilities\ReadTerritoriumFiles\bin\Debug\net8.0-windows\ClosedXML.dll
+D:\projects\source code\Utilities\ReadTerritoriumFiles\bin\Debug\net8.0-windows\DocumentFormat.OpenXml.dll
+D:\projects\source code\Utilities\ReadTerritoriumFiles\bin\Debug\net8.0-windows\ExcelNumberFormat.dll
+D:\projects\source code\Utilities\ReadTerritoriumFiles\bin\Debug\net8.0-windows\Irony.dll
+D:\projects\source code\Utilities\ReadTerritoriumFiles\bin\Debug\net8.0-windows\SixLabors.Fonts.dll
+D:\projects\source code\Utilities\ReadTerritoriumFiles\bin\Debug\net8.0-windows\XLParser.dll
