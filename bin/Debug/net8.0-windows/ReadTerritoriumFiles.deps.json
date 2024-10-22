@@ -791,7 +791,10 @@
           "FileHelpers": "3.5.2"
         },
         "runtime": {
-          "Cetap_Classes.dll": {}
+          "Cetap_Classes.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

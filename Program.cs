@@ -1,9 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Cetap_Classes;
 using ClosedXML.Excel;
+using DocumentFormat.OpenXml.EMMA;
 using DocumentFormat.OpenXml.Office2013.Word;
 using Dumpify;
 using System.Collections.ObjectModel;
+using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 Console.WriteLine("Territorium File reader");
@@ -19,6 +23,14 @@ string filepath = Console.ReadLine();
 //string filepath = "D:/test/CEA_MAT_May_11.csv";
 Console.WriteLine(".......................................");
 Console.WriteLine(filepath);
+// Create a helper function to handle repeated selection and filtering for sections
+//private List<T> GetSectionData<T>(Collection<Read_online_AQL> my_recs, string sectionName, Func<Read_online_AQL, T> selector)
+//{
+//    return my_recs
+//        .Where(t => t.Test.Contains(sectionName) || t.Test.Contains($"Afdeling {sectionName.Last()}"))
+//        .Select(selector)
+//        .ToList();
+//}
 
 try
 {
@@ -26,476 +38,577 @@ try
     switch (filetype)
     {
         case "AQL":
-            Collection<Read_online_AQL> my_recs;
+            Collection<Read_online_AQL> my_recs = reader.AQLrecs;
             List<onlineAQL> AQLs = new List<onlineAQL>();
-            my_recs = new Collection<Read_online_AQL>();
-            my_recs = reader.AQLrecs;
-            var section1 = my_recs
-        .Where(t => t.Test.Contains("Section 1") || t.Test.Contains("Afdeling 1"))
-        .Select(t => new
-        {
-            t.RefNo,
-            t.Test,
-            t.Surname,
-            t.Name,
-            t.Group,
-            t.Period,
-            t.DOT,
-            t.Email,
-            t.StartTest,
-            t.Question1,
-            t.Question2,
-            t.Question3,
-            t.Question4,
-            t.Question5,
-            t.Question6,
-            t.Question7,
-            t.Question8,
-            t.Question9,
-            t.Question10,
-            t.Question11,
-            t.Question12,
-            t.Question13,
-            t.Question14,
-            t.Question15,
-            t.Question16,
-            t.Question17
-        })
-        .ToList();
-
-            var section2 = my_recs
-           .Where(t => t.Test.Contains("Section 2") || t.Test.Contains("Afdeling 2"))
-            .Select(t => new
+            //  my_recs = new Collection<Read_online_AQL>();
+            //    my_recs = reader.AQLrecs;
+            //    var section1 = my_recs
+            //.Where(t => t.Test.Contains("Section 1") || t.Test.Contains("Afdeling 1"))
+            //.Select(t => new
+            //{
+            //    t.RefNo,
+            //    t.Test,
+            //    t.Surname,
+            //    t.Name,
+            //    t.Group,
+            //    t.Period,
+            //    t.DOT,
+            //    t.Email,
+            //    t.StartTest,
+            //    t.Question1,
+            //    t.Question2,
+            //    t.Question3,
+            //    t.Question4,
+            //    t.Question5,
+            //    t.Question6,
+            //    t.Question7,
+            //    t.Question8,
+            //    t.Question9,
+            //    t.Question10,
+            //    t.Question11,
+            //    t.Question12,
+            //    t.Question13,
+            //    t.Question14,
+            //    t.Question15,
+            //    t.Question16,
+            //    t.Question17
+            //})
+            //.ToList();
+            // Use the helper function to fetch section data
+            var section1 = GetSectionData(my_recs, "Section 1", t => new
             {
                 t.RefNo,
-                t.Question1,
-                t.Question2,
-                t.Question3,
-                t.Question4,
-                t.Question5,
-                t.Question6,
-                t.Question7,
-                t.Question8,
-                t.Question9,
-                t.Question10,
-                t.Question11,
-                t.Question12,
-                t.Question13,
-                t.Question14,
-                t.Question15,
-                t.Question16,
-                t.Question17
-            })
-           .ToList();
+                t.Surname,
+                t.Name,
+                t.Group,
+                t.Period,
+                t.DOT,
+                t.Email,
+                t.StartTest,
+                Questions = new[] { t.Question1, t.Question2, t.Question3, t.Question4, t.Question5, t.Question6, t.Question7, t.Question8, t.Question9, t.Question10, t.Question11, t.Question12, t.Question13, t.Question14, t.Question15, t.Question16, t.Question17 }
+            });
 
-            var section3 = my_recs
-            .Where(t => t.Test.Contains("Section 3") || t.Test.Contains("Afdeling 3"))
-             .Select(t => new
-             {
-                 t.RefNo,
-                 t.Question1,
-                 t.Question2,
-                 t.Question3,
-                 t.Question4,
-                 t.Question5,
-                 t.Question6,
-                 t.Question7,
-                 t.Question8,
-                 t.Question9,
-                 t.Question10,
-                 t.Question11,
-                 t.Question12,
-                 t.Question13,
-                 t.Question14,
-                 t.Question15,
-                 t.Question16,
-                 t.Question17,
-                 t.Question18,
-                 t.Question19,
-                 t.Question20,
-                 t.Question21,
-                 t.Question22,
-                 t.Question23,
-                 t.Question24,
-                 t.Question25
-             })
-            .ToList();
 
-            var section4 = my_recs
-            .Where(t => t.Test.Contains("Section 4") || t.Test.Contains("Afdeling 4"))
-             .Select(t => new
-             {
-                 t.RefNo,
-                 t.Question1,
-                 t.Question2,
-                 t.Question3,
-                 t.Question4,
-                 t.Question5,
-                 t.Question6,
-                 t.Question7,
-                 t.Question8,
-                 t.Question9,
-                 t.Question10,
-                 t.Question11,
-                 t.Question12,
-                 t.Question13,
-                 t.Question14,
-                 t.Question15,
-                 t.Question16,
-                 t.Question17,
-                 t.Question18,
-                 t.Question19,
-                 t.Question20,
-                 t.Question21,
-                 t.Question22,
-                 t.Question23,
-                 t.Question24,
-                 t.Question25
-             })
-            .ToList();
-
-            var section5 = my_recs
-            .Where(t => t.Test.Contains("Section 5") || t.Test.Contains("Afdeling 5"))
-             .Select(t => new
-             {
-                 t.RefNo,
-                 t.Question1,
-                 t.Question2,
-                 t.Question3,
-                 t.Question4,
-                 t.Question5,
-                 t.Question6,
-                 t.Question7,
-                 t.Question8,
-                 t.Question9,
-                 t.Question10,
-                 t.Question11,
-                 t.Question12,
-                 t.Question13,
-                 t.Question14,
-                 t.Question15,
-                 t.Question16,
-                 t.Question17
-             })
-            .ToList();
-
-            var section6 = my_recs
-            .Where(t => t.Test.Contains("Section 6") || t.Test.Contains("Afdeling 6"))
-             .Select(t => new
-             {
-                 t.RefNo,
-                 t.Question1,
-                 t.Question2,
-                 t.Question3,
-                 t.Question4,
-                 t.Question5,
-                 t.Question6,
-                 t.Question7,
-                 t.Question8,
-                 t.Question9,
-                 t.Question10,
-                 t.Question11,
-                 t.Question12,
-                 t.Question13,
-                 t.Question14,
-                 t.Question15,
-                 t.Question16,
-                 t.Question17,
-                 t.Question18,
-                 t.Question19,
-                 t.Question20,
-                 t.Question21,
-                 t.Question22,
-                 t.Question23,
-                 t.Question24
-             })
-            .ToList();
-
-            var section7 = my_recs
-            .Where(t => t.Test.Contains("Section 7") || t.Test.Contains("Afdeling 7"))
-            .Select(t => new
+            var section2 = GetSectionData(my_recs, "Section 2", t => new
             {
                 t.RefNo,
-                t.Question1,
-                t.Question2,
-                t.Question3,
-                t.Question4,
-                t.Question5,
-                t.Question6,
-                t.Question7,
-                t.Question8,
-                t.Question9,
-                t.Question10,
-                t.Question11,
-                t.Question12,
-                t.Question13,
-                t.Question14,
-                t.Question15,
-                t.Question16,
-                t.Question17,
-                t.Question18,
-                t.Question19,
-                t.Question20,
-                t.Question21,
-                t.Question22,
-                t.Question23,
-                t.Question24,
-                t.Question25
-            })
-            .ToList();
+                Questions = new[] { t.Question1, t.Question2, t.Question3, t.Question4, t.Question5, t.Question6, t.Question7, t.Question8, t.Question9, t.Question10, t.Question11, t.Question12, t.Question13, t.Question14, t.Question15, t.Question16, t.Question17 }
+            });
 
-            // join sections into one record using unique refNo
+            var section3 = GetSectionData(my_recs, "Section 3", t => new
+            {
+                t.RefNo,
+                Questions = new[] { t.Question1, t.Question2, t.Question3, t.Question4, t.Question5, t.Question6, t.Question7, t.Question8, t.Question9, t.Question10, t.Question11, t.Question12, t.Question13, t.Question14, t.Question15, t.Question16, t.Question17, t.Question18, t.Question19, t.Question20, t.Question21, t.Question22, t.Question23, t.Question24, t.Question25 }
+            });
+
+            // var section2 = my_recs
+            //.Where(t => t.Test.Contains("Section 2") || t.Test.Contains("Afdeling 2"))
+            // .Select(t => new
+            // {
+            //     t.RefNo,
+            //     t.Question1,
+            //     t.Question2,
+            //     t.Question3,
+            //     t.Question4,
+            //     t.Question5,
+            //     t.Question6,
+            //     t.Question7,
+            //     t.Question8,
+            //     t.Question9,
+            //     t.Question10,
+            //     t.Question11,
+            //     t.Question12,
+            //     t.Question13,
+            //     t.Question14,
+            //     t.Question15,
+            //     t.Question16,
+            //     t.Question17
+            // })
+            //.ToList();
+
+            //var section3 = my_recs
+            //.Where(t => t.Test.Contains("Section 3") || t.Test.Contains("Afdeling 3"))
+            // .Select(t => new
+            // {
+            //     t.RefNo,
+            //     t.Question1,
+            //     t.Question2,
+            //     t.Question3,
+            //     t.Question4,
+            //     t.Question5,
+            //     t.Question6,
+            //     t.Question7,
+            //     t.Question8,
+            //     t.Question9,
+            //     t.Question10,
+            //     t.Question11,
+            //     t.Question12,
+            //     t.Question13,
+            //     t.Question14,
+            //     t.Question15,
+            //     t.Question16,
+            //     t.Question17,
+            //     t.Question18,
+            //     t.Question19,
+            //     t.Question20,
+            //     t.Question21,
+            //     t.Question22,
+            //     t.Question23,
+            //     t.Question24,
+            //     t.Question25
+            // })
+            //.ToList();
+
+            // Repeat for other sections (section4, section5, etc.)
+            var section4 = GetSectionData(my_recs, "Section 4", t => new
+            {
+                t.RefNo,
+                Questions = new[] { t.Question1, t.Question2, t.Question3, t.Question4, t.Question5, t.Question6, t.Question7, t.Question8, t.Question9, t.Question10, t.Question11, t.Question12, t.Question13, t.Question14, t.Question15, t.Question16, t.Question17, t.Question18, t.Question19, t.Question20, t.Question21, t.Question22, t.Question23, t.Question24, t.Question25 }
+            });
+
+            var section5 = GetSectionData(my_recs, "Section 5", t => new
+            {
+                t.RefNo,
+                Questions = new[] { t.Question1, t.Question2, t.Question3, t.Question4, t.Question5, t.Question6, t.Question7, t.Question8, t.Question9, t.Question10, t.Question11, t.Question12, t.Question13, t.Question14, t.Question15, t.Question16, t.Question17 }
+            });
+
+            var section6 = GetSectionData(my_recs, "Section 6", t => new
+            {
+                t.RefNo,
+                Questions = new[] { t.Question1, t.Question2, t.Question3, t.Question4, t.Question5, t.Question6, t.Question7, t.Question8, t.Question9, t.Question10, t.Question11, t.Question12, t.Question13, t.Question14, t.Question15, t.Question16, t.Question17, t.Question18, t.Question19, t.Question20, t.Question21, t.Question22, t.Question23, t.Question24 }
+            });
+
+            var section7 = GetSectionData(my_recs, "Section 7", t => new
+            {
+                t.RefNo,
+                Questions = new[] { t.Question1, t.Question2, t.Question3, t.Question4, t.Question5, t.Question6, t.Question7, t.Question8, t.Question9, t.Question10, t.Question11, t.Question12, t.Question13, t.Question14, t.Question15, t.Question16, t.Question17, t.Question18, t.Question19, t.Question20, t.Question21, t.Question22, t.Question23, t.Question24, t.Question25 }
+            });
+
+
+            //var section4 = my_recs
+            //.Where(t => t.Test.Contains("Section 4") || t.Test.Contains("Afdeling 4"))
+            // .Select(t => new
+            // {
+            //     t.RefNo,
+            //     t.Question1,
+            //     t.Question2,
+            //     t.Question3,
+            //     t.Question4,
+            //     t.Question5,
+            //     t.Question6,
+            //     t.Question7,
+            //     t.Question8,
+            //     t.Question9,
+            //     t.Question10,
+            //     t.Question11,
+            //     t.Question12,
+            //     t.Question13,
+            //     t.Question14,
+            //     t.Question15,
+            //     t.Question16,
+            //     t.Question17,
+            //     t.Question18,
+            //     t.Question19,
+            //     t.Question20,
+            //     t.Question21,
+            //     t.Question22,
+            //     t.Question23,
+            //     t.Question24,
+            //     t.Question25
+            // })
+            //.ToList();
+
+            //var section5 = my_recs
+            //.Where(t => t.Test.Contains("Section 5") || t.Test.Contains("Afdeling 5"))
+            // .Select(t => new
+            // {
+            //     t.RefNo,
+            //     t.Question1,
+            //     t.Question2,
+            //     t.Question3,
+            //     t.Question4,
+            //     t.Question5,
+            //     t.Question6,
+            //     t.Question7,
+            //     t.Question8,
+            //     t.Question9,
+            //     t.Question10,
+            //     t.Question11,
+            //     t.Question12,
+            //     t.Question13,
+            //     t.Question14,
+            //     t.Question15,
+            //     t.Question16,
+            //     t.Question17
+            // })
+            //.ToList();
+
+            //var section6 = my_recs
+            //.Where(t => t.Test.Contains("Section 6") || t.Test.Contains("Afdeling 6"))
+            // .Select(t => new
+            // {
+            //     t.RefNo,
+            //     t.Question1,
+            //     t.Question2,
+            //     t.Question3,
+            //     t.Question4,
+            //     t.Question5,
+            //     t.Question6,
+            //     t.Question7,
+            //     t.Question8,
+            //     t.Question9,
+            //     t.Question10,
+            //     t.Question11,
+            //     t.Question12,
+            //     t.Question13,
+            //     t.Question14,
+            //     t.Question15,
+            //     t.Question16,
+            //     t.Question17,
+            //     t.Question18,
+            //     t.Question19,
+            //     t.Question20,
+            //     t.Question21,
+            //     t.Question22,
+            //     t.Question23,
+            //     t.Question24
+            // })
+            //.ToList();
+
+            //var section7 = my_recs
+            //.Where(t => t.Test.Contains("Section 7") || t.Test.Contains("Afdeling 7"))
+            //.Select(t => new
+            //{
+            //    t.RefNo,
+            //    t.Question1,
+            //    t.Question2,
+            //    t.Question3,
+            //    t.Question4,
+            //    t.Question5,
+            //    t.Question6,
+            //    t.Question7,
+            //    t.Question8,
+            //    t.Question9,
+            //    t.Question10,
+            //    t.Question11,
+            //    t.Question12,
+            //    t.Question13,
+            //    t.Question14,
+            //    t.Question15,
+            //    t.Question16,
+            //    t.Question17,
+            //    t.Question18,
+            //    t.Question19,
+            //    t.Question20,
+            //    t.Question21,
+            //    t.Question22,
+            //    t.Question23,
+            //    t.Question24,
+            //    t.Question25
+            //})
+            //.ToList();
+
+
+            //// join sections into one record using unique refNo
+            //var AQL = section1
+            //    .Join(section2, s1 => s1.RefNo, s2 => s2.RefNo, (s1, s2) => new { Person = s1, sec2 = s2 })
+            //    .Join(section3, s1 => s1.Person.RefNo, s3 => s3.RefNo, (s1, s3) => new { Person = s1, sec3 = s3 })
+
+            //    .Join(section4, s1 => s1.Person.Person.RefNo, s4 => s4.RefNo, (s1, s4) => new { Person = s1, sec4 = s4 })
+
+            //    .Join(section5, s1 => s1.Person.Person.Person.RefNo, s5 => s5.RefNo, (s1, s5) => new { Person = s1, sec5 = s5 })
+
+            //    .Join(section6, s1 => s1.Person.Person.Person.Person.RefNo, s6 => s6.RefNo, (s1, s6) => new { Person = s1, sec6 = s6 })
+
+            //    .Join(section7, s1 => s1.Person.Person.Person.Person.Person.RefNo, s7 => s7.RefNo, (s1, s7) => new { Person = s1, sec7 = s7 })
+
+            //    .Select(t => new
+            //    {
+            //        t.Person.Person.Person.Person.Person.Person,
+            //        t.Person.Person.Person.Person.Person.sec2,
+            //        t.Person.Person.Person.Person.sec3,
+            //        t.Person.Person.Person.sec4,
+            //        t.Person.Person.sec5,
+            //        t.Person.sec6,
+            //        t.sec7
+            //    })
+            //    .ToList();
+
+            // Join sections into one record using unique RefNo
             var AQL = section1
-                .Join(section2, s1 => s1.RefNo, s2 => s2.RefNo, (s1, s2) => new { Person = s1, sec2 = s2 })
-                .Join(section3, s1 => s1.Person.RefNo, s3 => s3.RefNo, (s1, s3) => new { Person = s1, sec3 = s3 })
-
-                .Join(section4, s1 => s1.Person.Person.RefNo, s4 => s4.RefNo, (s1, s4) => new { Person = s1, sec4 = s4 })
-
-                .Join(section5, s1 => s1.Person.Person.Person.RefNo, s5 => s5.RefNo, (s1, s5) => new { Person = s1, sec5 = s5 })
-
-                .Join(section6, s1 => s1.Person.Person.Person.Person.RefNo, s6 => s6.RefNo, (s1, s6) => new { Person = s1, sec6 = s6 })
-
-                .Join(section7, s1 => s1.Person.Person.Person.Person.Person.RefNo, s7 => s7.RefNo, (s1, s7) => new { Person = s1, sec7 = s7 })
-
+                .Join(section2, s1 => s1.RefNo, s2 => s2.RefNo, (s1, s2) => new { s1, s2 })
+                .Join(section3, s12 => s12.s1.RefNo, s3 => s3.RefNo, (s12, s3) => new { s12, s3 })
+                .Join(section4, s123 => s123.s12.s1.RefNo, s4 => s4.RefNo, (s123, s4) => new { s123, s4 })
+                .Join(section5, s1234 => s1234.s123.s12.s1.RefNo, s5 => s5.RefNo, (s1234, s5) => new { s1234, s5 })
+                .Join(section6, s12345 => s12345.s1234.s123.s12.s1.RefNo, s6 => s6.RefNo, (s12345, s6) => new { s12345, s6 })
+                .Join(section7, s123456 => s123456.s12345.s1234.s123.s12.s1.RefNo, s7 => s7.RefNo, (s123456, s7) => new { s123456, s7 })
                 .Select(t => new
                 {
-                    t.Person.Person.Person.Person.Person.Person,
-                    t.Person.Person.Person.Person.Person.sec2,
-                    t.Person.Person.Person.Person.sec3,
-                    t.Person.Person.Person.sec4,
-                    t.Person.Person.sec5,
-                    t.Person.sec6,
-                    t.sec7
+                    Person = t.s123456.s12345.s1234.s123.s12.s1,
+                    sec2 = t.s123456.s12345.s1234.s123.s12.s2,
+                    sec3 = t.s123456.s12345.s1234.s123.s3,
+                    sec4 = t.s123456.s12345.s1234.s4,
+                    sec5 = t.s123456.s12345.s5,
+                    sec6 = t.s123456.s6,
+                    sec7 = t.s7
                 })
                 .ToList();
-
 
             int count = 0;
             long NBT = 0;
             foreach (var line in AQL)
             {
-                onlineAQL my_aql = new onlineAQL();
-                my_aql.RefNo = Convert.ToInt64(line.Person.RefNo);
-                my_aql.Name = line.Person.Name;
-                my_aql.Surname = line.Person.Surname;
-                my_aql.DOT = line.Person.DOT;
-                my_aql.Group = line.Person.Group;
-                for (int i = 0; i < 26; i++)
+                //onlineAQL my_aql = new onlineAQL();
+                //my_aql.RefNo = Convert.ToInt64(line.Person.RefNo);
+                //my_aql.Name = line.Person.Name;
+                //my_aql.Surname = line.Person.Surname;
+                //my_aql.DOT = line.Person.DOT;
+                //my_aql.Group = line.Person.Group;
+                var my_aql = new onlineAQL
+                {
+                    RefNo = Convert.ToInt64(line.Person.RefNo),
+                    Name = line.Person.Name,
+                    Surname = line.Person.Surname,
+                    DOT = line.Person.DOT,
+                    Group = line.Person.Group,
+                };
+
+                for (int i = 0; i < 25; i++)
                 {
 
-                    switch (i)
+                    //switch (i)
+                    //{
+                    //    case 0:
+                    //        my_aql.Section1[i] = line.Person.Question1;
+                    //        my_aql.Section2[i] = line.sec2.Question1;
+                    //        my_aql.Section3[i] = line.sec3.Question1;
+                    //        my_aql.Section4[i] = line.sec4.Question1;
+                    //        my_aql.Section5[i] = line.sec5.Question1;
+                    //        my_aql.Section6[i] = line.sec6.Question1;
+                    //        my_aql.Section7[i] = line.sec7.Question1;
+                    //        continue;
+                    //    case 1:
+                    //        my_aql.Section1[i] = line.Person.Question2;
+                    //        my_aql.Section2[i] = line.sec2.Question2;
+                    //        my_aql.Section3[i] = line.sec3.Question2;
+                    //        my_aql.Section4[i] = line.sec4.Question2;
+                    //        my_aql.Section5[i] = line.sec5.Question2;
+                    //        my_aql.Section6[i] = line.sec6.Question2;
+                    //        my_aql.Section7[i] = line.sec7.Question2;
+                    //        continue;
+                    //    case 2:
+                    //        my_aql.Section1[i] = line.Person.Question3;
+                    //        my_aql.Section2[i] = line.sec2.Question3;
+                    //        my_aql.Section3[i] = line.sec3.Question3;
+                    //        my_aql.Section4[i] = line.sec4.Question3;
+                    //        my_aql.Section5[i] = line.sec5.Question3;
+                    //        my_aql.Section6[i] = line.sec6.Question3;
+                    //        my_aql.Section7[i] = line.sec7.Question3;
+                    //        continue;
+                    //    case 3:
+                    //        my_aql.Section1[i] = line.Person.Question4;
+                    //        my_aql.Section2[i] = line.sec2.Question4;
+                    //        my_aql.Section3[i] = line.sec3.Question4;
+                    //        my_aql.Section4[i] = line.sec4.Question4;
+                    //        my_aql.Section5[i] = line.sec5.Question4;
+                    //        my_aql.Section6[i] = line.sec6.Question4;
+                    //        my_aql.Section7[i] = line.sec7.Question4;
+                    //        continue;
+                    //    case 4:
+                    //        my_aql.Section1[i] = line.Person.Question5;
+                    //        my_aql.Section2[i] = line.sec2.Question5;
+                    //        my_aql.Section3[i] = line.sec3.Question5;
+                    //        my_aql.Section4[i] = line.sec4.Question5;
+                    //        my_aql.Section5[i] = line.sec5.Question5;
+                    //        my_aql.Section6[i] = line.sec6.Question5;
+                    //        my_aql.Section7[i] = line.sec7.Question5;
+                    //        continue;
+                    //    case 5:
+                    //        my_aql.Section1[i] = line.Person.Question6;
+                    //        my_aql.Section2[i] = line.sec2.Question6;
+                    //        my_aql.Section3[i] = line.sec3.Question6;
+                    //        my_aql.Section4[i] = line.sec4.Question6;
+                    //        my_aql.Section5[i] = line.sec5.Question6;
+                    //        my_aql.Section6[i] = line.sec6.Question6;
+                    //        my_aql.Section7[i] = line.sec7.Question6;
+                    //        continue;
+
+                    //    case 6:
+                    //        my_aql.Section1[i] = line.Person.Question7;
+                    //        my_aql.Section2[i] = line.sec2.Question7;
+                    //        my_aql.Section3[i] = line.sec3.Question7;
+                    //        my_aql.Section4[i] = line.sec4.Question7;
+                    //        my_aql.Section5[i] = line.sec5.Question7;
+                    //        my_aql.Section6[i] = line.sec6.Question7;
+                    //        my_aql.Section7[i] = line.sec7.Question7;
+                    //        continue;
+                    //    case 7:
+                    //        my_aql.Section1[i] = line.Person.Question8;
+                    //        my_aql.Section2[i] = line.sec2.Question8;
+                    //        my_aql.Section3[i] = line.sec3.Question8;
+                    //        my_aql.Section4[i] = line.sec4.Question8;
+                    //        my_aql.Section5[i] = line.sec5.Question8;
+                    //        my_aql.Section6[i] = line.sec6.Question8;
+                    //        my_aql.Section7[i] = line.sec7.Question8;
+                    //        continue;
+                    //    case 8:
+                    //        my_aql.Section1[i] = line.Person.Question9;
+                    //        my_aql.Section2[i] = line.sec2.Question9;
+                    //        my_aql.Section3[i] = line.sec3.Question9;
+                    //        my_aql.Section4[i] = line.sec4.Question9;
+                    //        my_aql.Section5[i] = line.sec5.Question9;
+                    //        my_aql.Section6[i] = line.sec6.Question9;
+                    //        my_aql.Section7[i] = line.sec7.Question9;
+                    //        continue;
+                    //    case 9:
+                    //        my_aql.Section1[i] = line.Person.Question10;
+                    //        my_aql.Section2[i] = line.sec2.Question10;
+                    //        my_aql.Section3[i] = line.sec3.Question10;
+                    //        my_aql.Section4[i] = line.sec4.Question10;
+                    //        my_aql.Section5[i] = line.sec5.Question10;
+                    //        my_aql.Section6[i] = line.sec6.Question10;
+                    //        my_aql.Section7[i] = line.sec7.Question10;
+                    //        continue;
+                    //    case 10:
+                    //        my_aql.Section1[i] = line.Person.Question11;
+                    //        my_aql.Section2[i] = line.sec2.Question11;
+                    //        my_aql.Section3[i] = line.sec3.Question11;
+                    //        my_aql.Section4[i] = line.sec4.Question11;
+                    //        my_aql.Section5[i] = line.sec5.Question11;
+                    //        my_aql.Section6[i] = line.sec6.Question11;
+                    //        my_aql.Section7[i] = line.sec7.Question11;
+                    //        continue;
+                    //    case 11:
+                    //        my_aql.Section1[i] = line.Person.Question12;
+                    //        my_aql.Section2[i] = line.sec2.Question12;
+                    //        my_aql.Section3[i] = line.sec3.Question12;
+                    //        my_aql.Section4[i] = line.sec4.Question12;
+                    //        my_aql.Section5[i] = line.sec5.Question12;
+                    //        my_aql.Section6[i] = line.sec6.Question12;
+                    //        my_aql.Section7[i] = line.sec7.Question12;
+                    //        continue;
+                    //    case 12:
+                    //        my_aql.Section1[i] = line.Person.Question13;
+                    //        my_aql.Section2[i] = line.sec2.Question13;
+                    //        my_aql.Section3[i] = line.sec3.Question13;
+                    //        my_aql.Section4[i] = line.sec4.Question13;
+                    //        my_aql.Section5[i] = line.sec5.Question13;
+                    //        my_aql.Section6[i] = line.sec6.Question13;
+                    //        my_aql.Section7[i] = line.sec7.Question13;
+                    //        continue;
+                    //    case 13:
+                    //        my_aql.Section1[i] = line.Person.Question14;
+                    //        my_aql.Section2[i] = line.sec2.Question14;
+                    //        my_aql.Section3[i] = line.sec3.Question14;
+                    //        my_aql.Section4[i] = line.sec4.Question14;
+                    //        my_aql.Section5[i] = line.sec5.Question14;
+                    //        my_aql.Section6[i] = line.sec6.Question14;
+                    //        my_aql.Section7[i] = line.sec7.Question14;
+                    //        continue;
+                    //    case 14:
+                    //        my_aql.Section1[i] = line.Person.Question15;
+                    //        my_aql.Section2[i] = line.sec2.Question15;
+                    //        my_aql.Section3[i] = line.sec3.Question15;
+                    //        my_aql.Section4[i] = line.sec4.Question15;
+                    //        my_aql.Section5[i] = line.sec5.Question15;
+                    //        my_aql.Section6[i] = line.sec6.Question15;
+                    //        my_aql.Section7[i] = line.sec7.Question15;
+                    //        continue;
+                    //    case 15:
+                    //        my_aql.Section1[i] = line.Person.Question16;
+                    //        my_aql.Section2[i] = line.sec2.Question16;
+                    //        my_aql.Section3[i] = line.sec3.Question16;
+                    //        my_aql.Section4[i] = line.sec4.Question16;
+                    //        my_aql.Section5[i] = line.sec5.Question16;
+                    //        my_aql.Section6[i] = line.sec6.Question16;
+                    //        my_aql.Section7[i] = line.sec7.Question16;
+                    //        continue;
+                    //    case 16:
+                    //        my_aql.Section1[i] = line.Person.Question17;
+                    //        my_aql.Section2[i] = line.sec2.Question17;
+                    //        my_aql.Section3[i] = line.sec3.Question17;
+                    //        my_aql.Section4[i] = line.sec4.Question17;
+                    //        my_aql.Section5[i] = line.sec5.Question17;
+                    //        my_aql.Section6[i] = line.sec6.Question17;
+                    //        my_aql.Section7[i] = line.sec7.Question17;
+                    //        continue;
+                    //    case 17:
+                    //        my_aql.Section3[i] = line.sec3.Question18;
+                    //        my_aql.Section4[i] = line.sec4.Question18;
+                    //        my_aql.Section6[i] = line.sec6.Question18;
+                    //        my_aql.Section7[i] = line.sec7.Question18;
+                    //        continue;
+                    //    case 18:
+                    //        my_aql.Section3[i] = line.sec3.Question19;
+                    //        my_aql.Section4[i] = line.sec4.Question19;
+                    //        my_aql.Section6[i] = line.sec6.Question19;
+                    //        my_aql.Section7[i] = line.sec7.Question19;
+                    //        continue;
+                    //    case 19:
+                    //        my_aql.Section3[i] = line.sec3.Question20;
+                    //        my_aql.Section4[i] = line.sec4.Question20;
+                    //        my_aql.Section6[i] = line.sec6.Question20;
+                    //        my_aql.Section7[i] = line.sec7.Question20;
+                    //        continue;
+                    //    case 20:
+                    //        my_aql.Section3[i] = line.sec3.Question21;
+                    //        my_aql.Section4[i] = line.sec4.Question21;
+                    //        my_aql.Section6[i] = line.sec6.Question21;
+                    //        my_aql.Section7[i] = line.sec7.Question21;
+                    //        continue;
+                    //    case 21:
+                    //        my_aql.Section3[i] = line.sec3.Question22;
+                    //        my_aql.Section4[i] = line.sec4.Question22;
+                    //        my_aql.Section6[i] = line.sec6.Question22;
+                    //        my_aql.Section6[i] = line.sec6.Question22;
+                    //        my_aql.Section7[i] = line.sec7.Question22;
+                    //        continue;
+                    //    case 22:
+                    //        my_aql.Section3[i] = line.sec3.Question23;
+                    //        my_aql.Section4[i] = line.sec4.Question23;
+                    //        my_aql.Section6[i] = line.sec6.Question23;
+                    //        my_aql.Section7[i] = line.sec7.Question23;
+                    //        continue;
+                    //    case 23:
+                    //        my_aql.Section3[i] = line.sec3.Question24;
+                    //        my_aql.Section4[i] = line.sec4.Question24;
+                    //        my_aql.Section6[i] = line.sec6.Question24;
+                    //        my_aql.Section7[i] = line.sec7.Question24;
+                    //        continue;
+                    //    case 24:
+
+                    //        my_aql.Section3[i] = line.sec3.Question25;
+                    //        my_aql.Section4[i] = line.sec4.Question25;
+                    //        my_aql.Section7[i] = line.sec7.Question25;
+
+                    //        break;
+                    //    default:
+                    //        break;
+                    //}
+
+                    if (i < 17)
                     {
-                        case 0:
-                            my_aql.Section1[i] = line.Person.Question1;
-                            my_aql.Section2[i] = line.sec2.Question1;
-                            my_aql.Section3[i] = line.sec3.Question1;
-                            my_aql.Section4[i] = line.sec4.Question1;
-                            my_aql.Section5[i] = line.sec5.Question1;
-                            my_aql.Section6[i] = line.sec6.Question1;
-                            my_aql.Section7[i] = line.sec7.Question1;
-                            continue;
-                        case 1:
-                            my_aql.Section1[i] = line.Person.Question2;
-                            my_aql.Section2[i] = line.sec2.Question2;
-                            my_aql.Section3[i] = line.sec3.Question2;
-                            my_aql.Section4[i] = line.sec4.Question2;
-                            my_aql.Section5[i] = line.sec5.Question2;
-                            my_aql.Section6[i] = line.sec6.Question2;
-                            my_aql.Section7[i] = line.sec7.Question2;
-                            continue;
-                        case 2:
-                            my_aql.Section1[i] = line.Person.Question3;
-                            my_aql.Section2[i] = line.sec2.Question3;
-                            my_aql.Section3[i] = line.sec3.Question3;
-                            my_aql.Section4[i] = line.sec4.Question3;
-                            my_aql.Section5[i] = line.sec5.Question3;
-                            my_aql.Section6[i] = line.sec6.Question3;
-                            my_aql.Section7[i] = line.sec7.Question3;
-                            continue;
-                        case 3:
-                            my_aql.Section1[i] = line.Person.Question4;
-                            my_aql.Section2[i] = line.sec2.Question4;
-                            my_aql.Section3[i] = line.sec3.Question4;
-                            my_aql.Section4[i] = line.sec4.Question4;
-                            my_aql.Section5[i] = line.sec5.Question4;
-                            my_aql.Section6[i] = line.sec6.Question4;
-                            my_aql.Section7[i] = line.sec7.Question4;
-                            continue;
-                        case 4:
-                            my_aql.Section1[i] = line.Person.Question5;
-                            my_aql.Section2[i] = line.sec2.Question5;
-                            my_aql.Section3[i] = line.sec3.Question5;
-                            my_aql.Section4[i] = line.sec4.Question5;
-                            my_aql.Section5[i] = line.sec5.Question5;
-                            my_aql.Section6[i] = line.sec6.Question5;
-                            my_aql.Section7[i] = line.sec7.Question5;
-                            continue;
-                        case 5:
-                            my_aql.Section1[i] = line.Person.Question6;
-                            my_aql.Section2[i] = line.sec2.Question6;
-                            my_aql.Section3[i] = line.sec3.Question6;
-                            my_aql.Section4[i] = line.sec4.Question6;
-                            my_aql.Section5[i] = line.sec5.Question6;
-                            my_aql.Section6[i] = line.sec6.Question6;
-                            my_aql.Section7[i] = line.sec7.Question6;
-                            continue;
-
-                        case 6:
-                            my_aql.Section1[i] = line.Person.Question7;
-                            my_aql.Section2[i] = line.sec2.Question7;
-                            my_aql.Section3[i] = line.sec3.Question7;
-                            my_aql.Section4[i] = line.sec4.Question7;
-                            my_aql.Section5[i] = line.sec5.Question7;
-                            my_aql.Section6[i] = line.sec6.Question7;
-                            my_aql.Section7[i] = line.sec7.Question7;
-                            continue;
-                        case 7:
-                            my_aql.Section1[i] = line.Person.Question8;
-                            my_aql.Section2[i] = line.sec2.Question8;
-                            my_aql.Section3[i] = line.sec3.Question8;
-                            my_aql.Section4[i] = line.sec4.Question8;
-                            my_aql.Section5[i] = line.sec5.Question8;
-                            my_aql.Section6[i] = line.sec6.Question8;
-                            my_aql.Section7[i] = line.sec7.Question8;
-                            continue;
-                        case 8:
-                            my_aql.Section1[i] = line.Person.Question9;
-                            my_aql.Section2[i] = line.sec2.Question9;
-                            my_aql.Section3[i] = line.sec3.Question9;
-                            my_aql.Section4[i] = line.sec4.Question9;
-                            my_aql.Section5[i] = line.sec5.Question9;
-                            my_aql.Section6[i] = line.sec6.Question9;
-                            my_aql.Section7[i] = line.sec7.Question9;
-                            continue;
-                        case 9:
-                            my_aql.Section1[i] = line.Person.Question10;
-                            my_aql.Section2[i] = line.sec2.Question10;
-                            my_aql.Section3[i] = line.sec3.Question10;
-                            my_aql.Section4[i] = line.sec4.Question10;
-                            my_aql.Section5[i] = line.sec5.Question10;
-                            my_aql.Section6[i] = line.sec6.Question10;
-                            my_aql.Section7[i] = line.sec7.Question10;
-                            continue;
-                        case 10:
-                            my_aql.Section1[i] = line.Person.Question11;
-                            my_aql.Section2[i] = line.sec2.Question11;
-                            my_aql.Section3[i] = line.sec3.Question11;
-                            my_aql.Section4[i] = line.sec4.Question11;
-                            my_aql.Section5[i] = line.sec5.Question11;
-                            my_aql.Section6[i] = line.sec6.Question11;
-                            my_aql.Section7[i] = line.sec7.Question11;
-                            continue;
-                        case 11:
-                            my_aql.Section1[i] = line.Person.Question12;
-                            my_aql.Section2[i] = line.sec2.Question12;
-                            my_aql.Section3[i] = line.sec3.Question12;
-                            my_aql.Section4[i] = line.sec4.Question12;
-                            my_aql.Section5[i] = line.sec5.Question12;
-                            my_aql.Section6[i] = line.sec6.Question12;
-                            my_aql.Section7[i] = line.sec7.Question12;
-                            continue;
-                        case 12:
-                            my_aql.Section1[i] = line.Person.Question13;
-                            my_aql.Section2[i] = line.sec2.Question13;
-                            my_aql.Section3[i] = line.sec3.Question13;
-                            my_aql.Section4[i] = line.sec4.Question13;
-                            my_aql.Section5[i] = line.sec5.Question13;
-                            my_aql.Section6[i] = line.sec6.Question13;
-                            my_aql.Section7[i] = line.sec7.Question13;
-                            continue;
-                        case 13:
-                            my_aql.Section1[i] = line.Person.Question14;
-                            my_aql.Section2[i] = line.sec2.Question14;
-                            my_aql.Section3[i] = line.sec3.Question14;
-                            my_aql.Section4[i] = line.sec4.Question14;
-                            my_aql.Section5[i] = line.sec5.Question14;
-                            my_aql.Section6[i] = line.sec6.Question14;
-                            my_aql.Section7[i] = line.sec7.Question14;
-                            continue;
-                        case 14:
-                            my_aql.Section1[i] = line.Person.Question15;
-                            my_aql.Section2[i] = line.sec2.Question15;
-                            my_aql.Section3[i] = line.sec3.Question15;
-                            my_aql.Section4[i] = line.sec4.Question15;
-                            my_aql.Section5[i] = line.sec5.Question15;
-                            my_aql.Section6[i] = line.sec6.Question15;
-                            my_aql.Section7[i] = line.sec7.Question15;
-                            continue;
-                        case 15:
-                            my_aql.Section1[i] = line.Person.Question16;
-                            my_aql.Section2[i] = line.sec2.Question16;
-                            my_aql.Section3[i] = line.sec3.Question16;
-                            my_aql.Section4[i] = line.sec4.Question16;
-                            my_aql.Section5[i] = line.sec5.Question16;
-                            my_aql.Section6[i] = line.sec6.Question16;
-                            my_aql.Section7[i] = line.sec7.Question16;
-                            continue;
-                        case 16:
-                            my_aql.Section1[i] = line.Person.Question17;
-                            my_aql.Section2[i] = line.sec2.Question17;
-                            my_aql.Section3[i] = line.sec3.Question17;
-                            my_aql.Section4[i] = line.sec4.Question17;
-                            my_aql.Section5[i] = line.sec5.Question17;
-                            my_aql.Section6[i] = line.sec6.Question17;
-                            my_aql.Section7[i] = line.sec7.Question17;
-                            continue;
-                        case 17:
-                            my_aql.Section3[i] = line.sec3.Question18;
-                            my_aql.Section4[i] = line.sec4.Question18;
-                            my_aql.Section6[i] = line.sec6.Question18;
-                            my_aql.Section7[i] = line.sec7.Question18;
-                            continue;
-                        case 18:
-                            my_aql.Section3[i] = line.sec3.Question19;
-                            my_aql.Section4[i] = line.sec4.Question19;
-                            my_aql.Section6[i] = line.sec6.Question19;
-                            my_aql.Section7[i] = line.sec7.Question19;
-                            continue;
-                        case 19:
-                            my_aql.Section3[i] = line.sec3.Question20;
-                            my_aql.Section4[i] = line.sec4.Question20;
-                            my_aql.Section6[i] = line.sec6.Question20;
-                            my_aql.Section7[i] = line.sec7.Question20;
-                            continue;
-                        case 20:
-                            my_aql.Section3[i] = line.sec3.Question21;
-                            my_aql.Section4[i] = line.sec4.Question21;
-                            my_aql.Section6[i] = line.sec6.Question21;
-                            my_aql.Section7[i] = line.sec7.Question21;
-                            continue;
-                        case 21:
-                            my_aql.Section3[i] = line.sec3.Question22;
-                            my_aql.Section4[i] = line.sec4.Question22;
-                            my_aql.Section6[i] = line.sec6.Question22;
-                            my_aql.Section6[i] = line.sec6.Question22;
-                            my_aql.Section7[i] = line.sec7.Question22;
-                            continue;
-                        case 22:
-                            my_aql.Section3[i] = line.sec3.Question23;
-                            my_aql.Section4[i] = line.sec4.Question23;
-                            my_aql.Section6[i] = line.sec6.Question23;
-                            my_aql.Section7[i] = line.sec7.Question23;
-                            continue;
-                        case 23:
-                            my_aql.Section3[i] = line.sec3.Question24;
-                            my_aql.Section4[i] = line.sec4.Question24;
-                            my_aql.Section6[i] = line.sec6.Question24;
-                            my_aql.Section7[i] = line.sec7.Question24;
-                            continue;
-                        case 24:
-
-                            my_aql.Section3[i] = line.sec3.Question25;
-                            my_aql.Section4[i] = line.sec4.Question25;
-                            my_aql.Section7[i] = line.sec7.Question25;
-
-                            break;
-                        default:
-                            break;
+                        my_aql.Section1[i] = line.Person.Questions[i];
+                        my_aql.Section2[i] = line.sec2.Questions[i];
                     }
 
+                    if (i < line.sec3.Questions.Length)
+                    {
+                        my_aql.Section3[i] = line.sec3.Questions[i];
+                    }
+
+                    // Handle other sections (section4, section5, etc.) similarly
+                    if (i < line.sec4.Questions.Length) my_aql.Section4[i] = line.sec4.Questions[i];
+                    if (i < line.sec5.Questions.Length) my_aql.Section5[i] = line.sec5.Questions[i];
+                    if (i < line.sec6.Questions.Length) my_aql.Section6[i] = line.sec6.Questions[i];
+                    if (i < line.sec7.Questions.Length) my_aql.Section7[i] = line.sec7.Questions[i];
                 }
-               
-                my_aql.changeData();
+
+
+            
+
+            my_aql.changeData();
+                my_aql.RecalculateCounts();
                 string my_data = my_aql.ToString();
                 // Console.WriteLine(my_data);
                 // Console.WriteLine($"chars = {my_data.Count()}");
@@ -508,6 +621,61 @@ try
 
             }
 
+// Helper function to handle section data retrieval
+static List<T> GetSectionData<T>(Collection<Read_online_AQL> my_recs, string sectionName, Func<Read_online_AQL, T> selector)
+            {
+                return my_recs
+                    .Where(t => t.Test.Contains(sectionName) || t.Test.Contains($"Afdeling {sectionName.Last()}"))
+                    .Select(selector)
+                    .ToList();
+            }
+
+
+    var scoredAQL = AQLs
+    .Select(n => new
+    {
+        section = n.RefNo,
+        sections = new Dictionary<string, int>()
+        {
+            { "sect1", n.Section1.Length == n.Section1Count ? n.Section1Count : -1 },
+            { "sect2", n.Section2.Length == n.Section2Count ? n.Section2Count : -1 },
+            { "section3", n.Section3.Length == n.Section3Count ? n.Section3Count : -1 },
+            { "sect4", n.Section4.Length == n.Section4Count ? n.Section4Count : -1 },
+            { "sect5", n.Section5.Length == n.Section5Count ? n.Section5Count : -1 },
+            { "sect6", n.Section6.Length == n.Section6Count ? n.Section6Count : -1 },
+            { "sect7", n.Section7.Length == n.Section7Count ? n.Section7Count : -1 }
+        }
+        .Where(s => s.Value != -1) // Exclude invalid (non-matching) sections
+        .ToDictionary(s => s.Key, s => s.Value)
+    })
+    .Where(n => n.sections.Any()) // Include only if at least one section is valid
+    .ToList();
+
+
+     var removeAQL = AQLs
+    .Select(n => new
+    {
+        section = n.RefNo,
+        sect1 = n.Section1.Length == n.Section1Count ? n.Section1Count : (int?)null,
+        sect2 = n.Section2.Length == n.Section2Count ? n.Section2Count : (int?)null,
+        sect3 = n.Section3.Length == n.Section3Count ? n.Section3Count : (int?)null,
+        sect4 = n.Section4.Length == n.Section4Count ? n.Section4Count : (int?)null,
+        sect5 = n.Section5.Length == n.Section5Count ? n.Section5Count : (int?)null,
+        sect6 = n.Section6.Length == n.Section6Count ? n.Section6Count : (int?)null,
+        sect7 = n.Section7.Length == n.Section7Count ? n.Section7Count : (int?)null
+    })
+    .Where(n =>
+        // Condition 1: Both sect1 and sect2 must have values
+        (n.sect1.HasValue && n.sect2.HasValue) ||
+        // Condition 2: Both sect3 and sect4 must have values
+        (n.sect3.HasValue && n.sect4.HasValue) ||
+        // Condition 3: Both sect5 and sect6 must have values
+        (n.sect5.HasValue && n.sect6.HasValue)
+    )
+    .ToList();
+          
+
+            
             var groupedData = AQLs
                                 .GroupBy(t  => new
                                 {
@@ -1053,6 +1221,9 @@ void Generate_Bio_Excel_file(List<onlineBIO> writers)
         string excelfile = Path.Combine(directory5, "NBT_AnswershettBio.xlsx");
         workbook.SaveAs(excelfile);
     }
-
+    Console.WriteLine("************************************************");
+    Console.WriteLine("Bio Completed");
     Console.ReadLine();
+
+
 }

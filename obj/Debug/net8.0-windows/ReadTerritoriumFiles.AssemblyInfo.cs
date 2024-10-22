@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReadTerritoriumFiles")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11ae10f1f4e7bafea7bd22473924165b21330830")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27110db7417a11970b7b7acba806a9a60a2f7b1b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReadTerritoriumFiles")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReadTerritoriumFiles")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
